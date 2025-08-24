@@ -311,7 +311,7 @@ class _HomePageState extends State<HomePage> {
                                               GestureDetector(
                                                 onTap: _launchEmail,
                                                 child: Text(
-                                                  'emelie.hovmark@gmail.com',
+                                                  'hej@rollingsweets.se',
                                                   style:
                                                       GoogleFonts.titilliumWeb(
                                                           fontSize: 18,
@@ -420,7 +420,7 @@ class _HomePageState extends State<HomePage> {
   void _launchEmail() async {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'emelie.hovmark@gmail.com',
+      path: 'hej@rollingsweets.se',
       query: Uri.encodeFull(
           'subject=Ritningsförfrågan&body=Hejsan, jag hittade din hemsida och...'),
     );
