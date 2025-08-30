@@ -1,3 +1,5 @@
+import 'dart:convert' show jsonEncode;
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -30,14 +32,16 @@ class _ContactFormState extends State<ContactForm> {
     final response = await http.post(
       uri,
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
-      body: {
+      body: jsonEncode({
         'name': _nameController.text,
         'email': _emailController.text,
         'subject': _subjectController.text,
-        'message': _messageController.text,
-      },
+        'message':
+            'Ämne:\n${_subjectController.text}\nMeddelande:\n${_messageController.text}',
+      }),
     );
 
     setState(() {
